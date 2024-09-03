@@ -2,7 +2,7 @@ import React from 'react';
 
 function BelowHeader(){
     return(
-        <div className="flex flex-col justify-center items-center bg-white">
+        <div className="flex flex-col justify-center items-center bg-white shadow-md">
             <div className="grid grid-cols-2 grid-rows-2 gap-1 p-6">
                 <div className="row-span-2 flex justify-center items-center">
                     <img src="images/banner3.png" alt="Banner 3" className="w-full h-48 object-cover" />
