@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
-import SubNav from './components/SubNav';
+import Nav from './components/Navigation/Nav';
+import SubNav from './components/SubNavigation/SubNav';
 import Landing from './components/Landing';
-import Footer from './components/Footer';
-// import Login from './components/subcomponents/Login';
+import Footer from './components/Footer/Footer';
+import Login from './components/Authentication/Login';
+import Info from './components/Info';
+import LoginNav from './components/Navigation/LoginNav';
 
 const MainLayout = ({ children }) => (
   <>
@@ -17,8 +19,7 @@ const MainLayout = ({ children }) => (
 
 const SubNavLayout = ({ children }) => (
   <>
-    <Nav/>
-    <SubNav />
+    <LoginNav/>
     {children}
     <Footer />
   </>
@@ -28,8 +29,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainLayout><Landing /></MainLayout>} />
-        {/* <Route path="/Login" element={<Login />} /> */}
+        <Route path="/" element={<MainLayout><Landing /><Info/></MainLayout>} />
+        <Route path="/Login" element={<SubNavLayout><Login /></SubNavLayout>} />
       </Routes>
     </Router>
   );
