@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import Hero from './landingpage/Hero';
+import React from 'react';
 import BelowHeader from './SubNavigation/BelowHeader';
-// import Shoes from './landingpage/shoes'
+import Hero from './landingpage/Hero';
+import Shoes from './Section/shoes';
 
 function Landing() {
     return(
-        <div> 
+        <main className="bg-gray-100 min-h-screen">
             <BelowHeader/>
             <Hero/>
-            {/* <Shoes/> */}
-        </div>
+            <Shoes/>
+        </main>
     );
 }
 

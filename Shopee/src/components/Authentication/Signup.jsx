@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Signup() {
     return (
         <div 
             className="min-h-[600px] flex items-center justify-center md:justify-end bg-shopee"
@@ -15,7 +15,7 @@ function Login() {
             <div className="bg-white w-full max-w-[400px] mx-4 md:mr-20 rounded-sm shadow-lg">
                 {/* Header */}
                 <div className="p-8 pb-6">
-                    <h1 className="text-xl text-gray-800 font-normal">Log In</h1>
+                    <h1 className="text-xl text-gray-800 font-normal">Sign Up</h1>
                 </div>
                 
                 {/* Form */}
@@ -23,24 +23,14 @@ function Login() {
                     <div className="space-y-3">
                         <input
                             type="text"
-                            placeholder="Phone number / Username / Email"
-                            className="w-full px-3 py-3 border border-gray-300 rounded-sm text-sm outline-none focus:border-gray-500 transition-colors"
-                        />
-                        <input
-                            type="password"
-                            placeholder="Password"
+                            placeholder="Phone number"
                             className="w-full px-3 py-3 border border-gray-300 rounded-sm text-sm outline-none focus:border-gray-500 transition-colors"
                         />
                     </div>
                     
                     <button className="w-full bg-shopee hover:bg-shopee2 text-white py-2.5 rounded-sm mt-4 text-sm font-medium uppercase transition-colors">
-                        Log In
+                        Next
                     </button>
-                    
-                    <div className="flex justify-between mt-3">
-                        <Link to="/" className="text-xs text-blue-600 hover:text-blue-800">Forgot Password</Link>
-                        <Link to="/" className="text-xs text-blue-600 hover:text-blue-800">Log in with SMS</Link>
-                    </div>
                     
                     {/* Divider */}
                     <div className="flex items-center my-5">
@@ -49,7 +39,7 @@ function Login() {
                         <div className="flex-1 h-px bg-gray-200"></div>
                     </div>
                     
-                    {/* Social Login */}
+                    {/* Social Signup */}
                     <div className="flex gap-2">
                         <button className="flex-1 flex items-center justify-center gap-2 border border-gray-300 py-2.5 rounded-sm hover:bg-gray-50 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -68,10 +58,18 @@ function Login() {
                         </button>
                     </div>
                     
-                    {/* Sign Up Link */}
+                    {/* Terms */}
+                    <p className="text-xs text-gray-500 text-center mt-5 leading-relaxed">
+                        By signing up, you agree to Shopee's{' '}
+                        <Link to="/" className="text-shopee hover:underline">Terms of Service</Link>
+                        {' '}&{' '}
+                        <Link to="/" className="text-shopee hover:underline">Privacy Policy</Link>
+                    </p>
+                    
+                    {/* Login Link */}
                     <div className="text-center mt-6">
-                        <span className="text-sm text-gray-400">New to Shopee? </span>
-                        <Link to="/Signup" className="text-sm text-shopee hover:text-shopee2 font-medium">Sign Up</Link>
+                        <span className="text-sm text-gray-400">Have an account? </span>
+                        <Link to="/Login" className="text-sm text-shopee hover:text-shopee2 font-medium">Log In</Link>
                     </div>
                 </div>
             </div>
@@ -79,4 +77,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Signup;

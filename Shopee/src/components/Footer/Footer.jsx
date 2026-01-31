@@ -1,136 +1,119 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 function Footer() {
-    const isActive = (path) => location.pathname === path;
     return ( 
-        <div className=""> 
-            <div className="">
-                <div className="flex flex-col md:flex-row p-4 space-y-6 md:space-y-0 md:space-x-10 justify-center">
-                    {/* Customer Service Section */}
-                    <div className="flex flex-col space-y-2">
-                    <h1 className="font-bold text-gray-900 text-[12px] p-2">CUSTOMER SERVICE</h1>
-                    <CustomLink href="/" className="text-gray-500 text-[14px]">Help Centre</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">How to Buy</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Shipping & Delivery</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Returns & Refunds</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Order Status</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Payment Options</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Contact Us</CustomLink>
-                    </div>
-                    {/* About Shopee Section */}
-                    <div className="flex flex-col space-y-2">
-                    <h1 className="font-bold text-gray-900 text-[12px] p-2">ABOUT SHOPEE</h1>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">About Us</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Careers</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Shopee Blog</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Privacy Policy</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Terms & Conditions</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Shopee Coins</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Shopee Mall</CustomLink>
-                    <CustomLink href="/"className="text-gray-500 text-[14px]">Shopee Affiliate Program</CustomLink>
-                    </div>
+        <footer className="bg-neutral-100 border-t-4 border-shopee">
+            {/* Main Footer Content */}
+            <div className="max-w-[1200px] mx-auto px-4 py-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+                    {/* Customer Service */}
                     <div>
-                        <h1 className="font-bold text-gray-900 text-[12px] p-2">PAYMENT</h1>
-                            <ul className="grid grid-cols-3 gap-4">
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment1.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment2.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment3.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment4.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment5.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment6.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment7.png"/></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/payment8.png"/></li>
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 uppercase tracking-wide">Customer Service</h3>
+                        <ul className="space-y-2">
+                            {['Help Centre', 'How to Buy', 'How to Sell', 'Payment', 'Shopee Coins', 'Shipping', 'Return & Refund', 'Contact Us'].map((item) => (
+                                <li key={item}>
+                                    <Link to="/" className="text-xs text-gray-600 hover:text-shopee transition-colors">{item}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
+                    
+                    {/* About Shopee */}
                     <div>
-                        <h1 className="font-bold text-gray-900 text-[12px] p-2">LOGISTICS</h1>
-                        <ul class="grid grid-cols-3 gap-4">
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics1.png" /></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics2.png" /></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics3.png" /></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics4.png" /></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics5.png" /></li>
-                            <li className="bg-white p-1 rounded shadow-md"><img src="images/logistics6.png" /></li>
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 uppercase tracking-wide">About Shopee</h3>
+                        <ul className="space-y-2">
+                            {['About Us', 'Shopee Blog', 'Shopee Careers', 'Shopee Policies', 'Privacy Policy', 'Shopee Mall', 'Seller Centre', 'Flash Deals'].map((item) => (
+                                <li key={item}>
+                                    <Link to="/" className="text-xs text-gray-600 hover:text-shopee transition-colors">{item}</Link>
+                                </li>
+                            ))}
                         </ul>
-                        </div>
-                        <div className="">
-                            <h1 className="font-bold text-gray-900 text-[12px] p-2">FOLLOW US</h1>
-                            <div className="flex items-center space-x-2">
-                                <img src="images/social1.png" alt="Facebook" />
-                                <CustomLink href="/" className="text-gray-600 text-[14px]" >Facebook</CustomLink>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <img src="images/social2.png" alt="Instagram" />
-                                <CustomLink href="/" className="text-gray-600 text-[14px]" >Instagram</CustomLink>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <img src="images/social3.png" alt="Twitter" />
-                                <CustomLink href="/" className="text-gray-600 text-[14px]" >Twitter</CustomLink>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <img src="images/social4.png" alt="LinkedIn" />
-                                <CustomLink href="/" className="text-gray-600 text-[14px]" >LinkedIn</CustomLink>
-                            </div>
-                        </div>
-                        <div>
-                            <h1 className="font-bold text-gray-900 text-[12px] p-2">SHOPEE APP DOWNLOAD</h1>
-                            <ul className="flex items-start">
-                                <li>
-                                <CustomLink href="/">
-                                    <img src="images/qr.png" alt="QR Code" className="bg-white p-1 rounded shadow-md" />
-                                </CustomLink>
-                                </li>
-                                <div className="flex flex-col space-y-2 ml-4">
-                                <li>
-                                    <CustomLink href="/">
-                                    <img src="images/download1.png" alt="Download 1" className="bg-white p-1 rounded shadow-md" />
-                                    </CustomLink>
-                                </li>
-                                <li>
-                                    <CustomLink href="/">
-                                    <img src="images/download2.png" alt="Download 2" className="bg-white p-1 rounded shadow-md" />
-                                    </CustomLink>
-                                </li>
-                                <li>
-                                    <CustomLink href="/">
-                                    <img src="images/download3.png" alt="Download 3" className="bg-white p-1 rounded shadow-md" />
-                                    </CustomLink>
-                                </li>
+                    </div>
+                    
+                    {/* Payment */}
+                    <div>
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 uppercase tracking-wide">Payment</h3>
+                        <div className="grid grid-cols-3 gap-2">
+                            {[1,2,3,4,5,6,7,8].map((i) => (
+                                <div key={i} className="bg-white rounded shadow-sm p-1.5 flex items-center justify-center h-8">
+                                    <img src={`/images/payment${i}.png`} alt={`payment ${i}`} className="max-h-full max-w-full object-contain"/>
                                 </div>
-                            </ul>
-                            </div>
-                </div>
-                <hr/>
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 p-4 sm:flex-nowrap sm:flex-row">
-                        <div className="text-center sm:text-left">
-                            <h1 className="font-bold text-gray-900 text-[12px] p-2">
-                            ©2024 Shopee. All Rights Reserved.
-                            </h1>
+                            ))}
                         </div>
-                        <div className="flex flex-wrap justify-center gap-x-2 gap-y-2 sm:flex-nowrap">
-                            <h1 className="font-bold text-gray-900 text-[12px]">Country & Region:</h1>
-                            <ul className="flex flex-wrap gap-x-3 gap-y-2 sm:flex-nowrap">
-                            <li className="text-gray-900 text-[12px]">Singapore</li>
-                            <li className="text-gray-900 text-[12px]">Indonesia</li>
-                            <li className="text-gray-900 text-[12px]">Thailand</li>
-                            <li className="text-gray-900 text-[12px]">Malaysia</li>
-                            <li className="text-gray-900 text-[12px]">Vietnam</li>
-                            <li className="text-gray-900 text-[12px]">Philippines</li>
-                            <li className="text-gray-900 text-[12px]">Brazil</li>
-                            <li className="text-gray-900 text-[12px]">Mexico</li>
-                            <li className="text-gray-900 text-[12px]">Colombia</li>
-                            <li className="text-gray-900 text-[12px]">Chile</li>
-                            <li className="text-gray-900 text-[12px]">Taiwan</li>
-                            </ul>
+                        
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 mt-6 uppercase tracking-wide">Logistics</h3>
+                        <div className="grid grid-cols-3 gap-2">
+                            {[1,2,3,4,5,6].map((i) => (
+                                <div key={i} className="bg-white rounded shadow-sm p-1.5 flex items-center justify-center h-8">
+                                    <img src={`/images/logistics${i}.png`} alt={`logistics ${i}`} className="max-h-full max-w-full object-contain"/>
+                                </div>
+                            ))}
                         </div>
                     </div>
+                    
+                    {/* Follow Us */}
+                    <div>
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 uppercase tracking-wide">Follow Us</h3>
+                        <ul className="space-y-3">
+                            {[
+                                { name: 'Facebook', icon: '/images/social1.png' },
+                                { name: 'Instagram', icon: '/images/social2.png' },
+                                { name: 'Twitter', icon: '/images/social3.png' },
+                                { name: 'LinkedIn', icon: '/images/social4.png' },
+                            ].map((social) => (
+                                <li key={social.name}>
+                                    <Link to="/" className="flex items-center gap-2 text-xs text-gray-600 hover:text-shopee transition-colors">
+                                        <img src={social.icon} alt={social.name} className="w-4 h-4 object-contain"/>
+                                        <span>{social.name}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    
+                    {/* Shopee App Download */}
+                    <div>
+                        <h3 className="text-xs font-bold text-gray-800 mb-4 uppercase tracking-wide">Shopee App Download</h3>
+                        <div className="flex gap-3">
+                            <Link to="/" className="bg-white rounded shadow-sm p-2">
+                                <img src="/images/qr.png" alt="QR Code" className="w-20 h-20 object-contain"/>
+                            </Link>
+                            <div className="flex flex-col gap-2">
+                                <Link to="/" className="bg-white rounded shadow-sm p-1.5">
+                                    <img src="/images/download1.png" alt="App Store" className="h-5 object-contain"/>
+                                </Link>
+                                <Link to="/" className="bg-white rounded shadow-sm p-1.5">
+                                    <img src="/images/download2.png" alt="Google Play" className="h-5 object-contain"/>
+                                </Link>
+                                <Link to="/" className="bg-white rounded shadow-sm p-1.5">
+                                    <img src="/images/download3.png" alt="App Gallery" className="h-5 object-contain"/>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+            {/* Bottom Bar */}
+            <div className="bg-neutral-200">
+                <div className="max-w-[1200px] mx-auto px-4 py-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <p className="text-xs text-gray-600">© 2024 Shopee. All Rights Reserved.</p>
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-600">
+                            <span>Country & Region:</span>
+                            {['Singapore', 'Indonesia', 'Thailand', 'Malaysia', 'Vietnam', 'Philippines', 'Brazil', 'Mexico', 'Colombia', 'Chile', 'Taiwan'].map((country, i) => (
+                                <span key={country}>
+                                    <Link to="/" className="hover:text-shopee transition-colors">{country}</Link>
+                                    {i < 10 && <span className="mx-1">|</span>}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     );
 }
-function CustomLink({ href, children, ...props }) {
-    return (
-        <Link to={href} {...props}> {children} </Link>
-    );
-}
+
 export default Footer;

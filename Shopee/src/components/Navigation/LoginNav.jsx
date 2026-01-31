@@ -1,22 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LoginNav(){
-    return(
-        <div className="flex justify-between items-center p-4">
-            <div className="flex items-center space-x-4">
-                <img src="images/shopee_logo.webp" className="h-10"/>
-                <h1 className="text-xl mt-2">Log In</h1>
+function LoginNav() {
+    return (
+        <header className="bg-white border-b border-gray-200">
+            <div className="max-w-[1200px] mx-auto px-4 py-4 flex items-center justify-between">
+                {/* Logo + Page Title */}
+                <div className="flex items-center gap-4">
+                    <Link to="/">
+                        <img 
+                            src="/images/shopee_logo.webp" 
+                            alt="Shopee" 
+                            className="h-[40px] w-auto object-contain"
+                            style={{ filter: 'brightness(0) saturate(100%) invert(35%) sepia(93%) saturate(1352%) hue-rotate(348deg) brightness(93%) contrast(93%)' }}
+                        />
+                    </Link>
+                    <span className="text-xl text-gray-800 font-normal hidden sm:inline">Login</span>
                 </div>
-            <CustomLink a href="/" className="text-[17px]">Need Help?</CustomLink>
-            
-        </div>
+                
+                {/* Help Link */}
+                <Link to="/" className="text-shopee text-sm hover:text-shopee2 transition-colors">
+                    Need help?
+                </Link>
+            </div>
+        </header>
     );
 }
 
-function CustomLink({ href, children, ...props }) {
-    return (
-        <Link to={href} {...props}> {children} </Link>
-    );
-}
 export default LoginNav;
